@@ -33,11 +33,9 @@ jobs:
 
       - name: Restore
         run: dotnet restore POPTickets/POPTickets.csproj
-        working-directory: POPTickets-Dalamud
 
       - name: Build
         run: dotnet build POPTickets/POPTickets.csproj --configuration Release --no-restore
-        working-directory: POPTickets-Dalamud
 
       # ── Release: runs only on version tags ──────────────────────────────
       - name: Package release ZIP
@@ -50,13 +48,12 @@ jobs:
           Compress-Archive -Path "$outDir/POPTickets.dll","$outDir/manifest.json" `
                            -DestinationPath $zipName
         shell: pwsh
-        working-directory: POPTickets-Dalamud
 
       - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: POPTickets-Dalamud/POPTickets-latest.zip
+          files: POPTickets-latest.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
