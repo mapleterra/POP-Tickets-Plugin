@@ -29,13 +29,11 @@ A host tool for running 3-digit POP Ticket lottery rounds inside Final Fantasy X
 ## Installation (custom repo)
 
 1. Open Dalamud's plugin installer → **Settings** → **Experimental**
-2. Add this URL to the **Custom Plugin Repositories** list — replacing `REPLACE_WITH_YOUR_GITHUB_USERNAME` with your GitHub username:
+2. Add this URL to the **Custom Plugin Repositories** list
    ```
-   https://raw.githubusercontent.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/POPTickets-Dalamud/main/repo.json
+   https://raw.githubusercontent.com/mapleterra/POPTickets-Dalamud/main/repo.json
    ```
 3. Save, then search for **POP Tickets** in the plugin installer and install it.
-
-> **Before pushing to GitHub**, do a find-and-replace across the repo for `REPLACE_WITH_YOUR_GITHUB_USERNAME` → your GitHub username, and `REPLACE_WITH_YOUR_NAME` → your display name.
 
 ## Manual installation (testing)
 
@@ -56,7 +54,7 @@ Click the **⚙ Settings** button in the host window, or use Dalamud's plugin se
 Requirements: .NET 9 SDK, FFXIV + Dalamud installed locally.
 
 ```bash
-git clone https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/POPTickets-Dalamud.git
+git clone https://github.com/mapleterra/POPTickets-Dalamud.git
 cd POPTickets-Dalamud
 dotnet restore POPTickets/POPTickets.csproj
 dotnet build  POPTickets/POPTickets.csproj --configuration Release
