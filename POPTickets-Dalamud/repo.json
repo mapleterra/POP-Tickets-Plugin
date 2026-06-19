@@ -1,0 +1,18 @@
+[
+  {
+    "Author": "REPLACE_WITH_YOUR_NAME",
+    "Name": "POP Tickets",
+    "InternalName": "POPTickets",
+    "AssemblyVersion": "1.0.0.0",
+    "Description": "Host tool for running 3-digit POP Ticket lottery rounds in FFXIV. Add players, track bets, auto-detect winning numbers from chat, resolve payouts, and keep a full draw history.",
+    "ApplicableVersion": "any",
+    "Tags": ["host", "lottery", "gil", "tickets", "minigame"],
+    "DalamudApiLevel": 12,
+    "IconUrl": "",
+    "ImageUrls": [],
+    "DownloadLinkInstall": "https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/POPTickets-Dalamud/releases/latest/download/POPTickets-latest.zip",
+    "DownloadLinkTesting": "https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/POPTickets-Dalamud/releases/latest/download/POPTickets-latest.zip",
+    "DownloadLinkUpdate":  "https://github.com/REPLACE_WITH_YOUR_GITHUB_USERNAME/POPTickets-Dalamud/releases/latest/download/POPTickets-latest.zip",
+    "Changelog": "Initial release."
+  }
+]

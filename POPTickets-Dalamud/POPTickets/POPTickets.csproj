@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <AssemblyName>POPTickets</AssemblyName>
+    <Version>1.0.0</Version>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Platforms>x64</Platforms>
+    <Optimize>true</Optimize>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DalamudPackager" Version="2.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DalamudLibraryReference Include="Dalamud" />
+    <DalamudLibraryReference Include="ImGui.NET" />
+    <DalamudLibraryReference Include="ImGuiScene" />
+    <DalamudLibraryReference Include="Lumina" />
+    <DalamudLibraryReference Include="Lumina.Excel" />
+    <DalamudLibraryReference Include="FFXIVClientStructs" />
+  </ItemGroup>
+</Project>
