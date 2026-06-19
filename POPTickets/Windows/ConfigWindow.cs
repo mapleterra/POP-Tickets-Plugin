@@ -19,9 +19,9 @@ public sealed class ConfigWindow : Window, IDisposable
         XivChatType.Party,
         XivChatType.Alliance,
         XivChatType.FreeCompany,
-        XivChatType.Linkshell1,
-        XivChatType.Linkshell2,
-        XivChatType.CrossWorldLinkshell1,
+        XivChatType.Ls1,
+        XivChatType.Ls2,
+        XivChatType.CrossLinkShell1,
         XivChatType.CustomEmote,
         XivChatType.Echo,
     };

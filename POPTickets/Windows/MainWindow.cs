@@ -69,7 +69,7 @@ public sealed class MainWindow : Window, IDisposable
         ImGui.TextColored(cfg.AccentColor, $"⏳  Next hourly draw in  {remaining:mm\\:ss}");
         ImGui.SameLine(ImGui.GetContentRegionAvail().X - 130);
         if (ImGui.SmallButton("⚙ Settings"))
-            _plugin.WindowSystem.GetWindow("POP Tickets — Configuration")!.IsOpen = true;
+            _plugin.OpenConfigWindow();
         ImGui.Separator();
 
         // ── Tab bar ────────────────────────────────────────────────────────

@@ -208,6 +208,8 @@ public sealed class Plugin : IDalamudPlugin
 
     private static string EscapeCsv(string value) => value.Replace("\"", "\"\"");
 
+    public void OpenConfigWindow()                       => _configWindow.IsOpen = true;
+
     private void OnCommand(string command, string args) => _mainWindow.Toggle();
     private void ToggleConfig()                          => _configWindow.Toggle();
     private void ToggleMain()                            => _mainWindow.Toggle();
