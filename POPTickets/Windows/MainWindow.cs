@@ -1,5 +1,5 @@
 using Dalamud.Interface.Windowing;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 using POPTickets.Models;
 using System;
 using System.Numerics;
@@ -336,7 +336,8 @@ public sealed class MainWindow : Window, IDisposable
             _resolvePopupOpen = false;
         }
 
-        var center = ImGui.GetMainViewport().GetCenter();
+        var viewport = ImGui.GetMainViewport();
+        var center   = viewport.Pos + viewport.Size * 0.5f;
         ImGui.SetNextWindowPos(center, ImGuiCond.Always, new Vector2(0.5f, 0.5f));
         bool open = true;
 

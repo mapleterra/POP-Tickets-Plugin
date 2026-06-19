@@ -1,3 +1,4 @@
+using Dalamud.Game.Chat;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
@@ -18,7 +19,8 @@ namespace POPTickets;
 
 public sealed class Plugin : IDalamudPlugin
 {
-    [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
+    public static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
+
     [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
     [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
     [PluginService] internal static IPluginLog Log { get; private set; } = null!;
@@ -35,8 +37,9 @@ public sealed class Plugin : IDalamudPlugin
     private readonly ConfigWindow _configWindow;
     private Regex? _triggerRegex;
 
-    public Plugin()
+    public Plugin(IDalamudPluginInterface pluginInterface)
     {
+        PluginInterface = pluginInterface;
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
 
         _mainWindow   = new MainWindow(this);
@@ -96,17 +99,12 @@ public sealed class Plugin : IDalamudPlugin
         }
     }
 
-    private void OnChatMessage(
-        XivChatType type,
-        int         timestamp,
-        ref SeString sender,
-        ref SeString message,
-        ref bool     isHandled)
+    private void OnChatMessage(IHandleableChatMessage message)
     {
-        if (type != Configuration.MonitoredChatType) return;
+        if (message.LogKind != Configuration.MonitoredChatType) return;
         if (_triggerRegex is null) return;
 
-        var text  = message.TextValue;
+        var text  = message.Message.TextValue;
         var match = _triggerRegex.Match(text);
         if (!match.Success || match.Groups.Count < 2) return;
 

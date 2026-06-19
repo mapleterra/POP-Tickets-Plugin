@@ -31,14 +31,14 @@ A host tool for running 3-digit POP Ticket lottery rounds inside Final Fantasy X
 1. Open Dalamud's plugin installer → **Settings** → **Experimental**
 2. Add this URL to the **Custom Plugin Repositories** list
    ```
-   https://raw.githubusercontent.com/mapleterra/POPTickets-Dalamud/main/repo.json
+   https://raw.githubusercontent.com/mapleterra/POP-Tickets-Plugin/main/repo.json
    ```
 3. Save, then search for **POP Tickets** in the plugin installer and install it.
 
 ## Manual installation (testing)
 
-1. Download the latest `POPTickets-vX.X.X.zip` from the [Releases](../../releases) page
-2. Extract `POPTickets.dll` and `manifest.json` into your Dalamud `devPlugins` folder
+1. Download the latest `latest.zip` from the [Releases](../../releases) page
+2. Extract `POPTickets.dll` and `POPTickets.json` into your Dalamud `devPlugins` folder
 3. Run `/xlplugins` in-game → **Dev Tools** → **Load Plugin**
 
 ## Configuration
@@ -51,16 +51,15 @@ Click the **⚙ Settings** button in the host window, or use Dalamud's plugin se
 
 ## Building from source
 
-Requirements: .NET 9 SDK, FFXIV + Dalamud installed locally.
+Requirements: .NET SDK (10.0.x), FFXIV + Dalamud installed locally.
 
 ```bash
-git clone https://github.com/mapleterra/POPTickets-Dalamud.git
-cd POPTickets-Dalamud
-dotnet restore POPTickets/POPTickets.csproj
-dotnet build  POPTickets/POPTickets.csproj --configuration Release
+git clone https://github.com/mapleterra/POP-Tickets-Plugin.git
+cd POP-Tickets-Plugin
+dotnet build POPTickets/POPTickets.csproj --configuration Release
 ```
 
-The CI workflow (`.github/workflows/build.yml`) downloads Dalamud automatically and publishes a release ZIP on every `v*.*.*` tag push.
+The project uses `Dalamud.NET.Sdk`, which pulls in the Dalamud references automatically. The CI workflow (`.github/workflows/build.yml`) downloads Dalamud and publishes a release ZIP on every `v*.*.*` tag push.
 
 ## Releasing a new version
 
@@ -69,7 +68,7 @@ git tag v1.0.1
 git push origin v1.0.1
 ```
 
-GitHub Actions will build, package `POPTickets.dll + manifest.json` into a ZIP, and publish it as a GitHub Release automatically.
+GitHub Actions will build, package `POPTickets.dll + POPTickets.json` into `latest.zip`, and publish it as a GitHub Release automatically.
 
 ## License
 

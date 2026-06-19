@@ -1,0 +1,14 @@
+{
+  "Author": "mapleterra",
+  "Name": "POP Tickets",
+  "Punchline": "Host 3-digit POP Ticket lottery rounds in FFXIV — track bets, auto-detect winning numbers, resolve payouts, and keep a full draw history.",
+  "Description": "Host tool for running 3-digit POP Ticket lottery rounds in FFXIV. Add players, pick three digits and a bet, auto-detect the winning number from a chosen chat channel, resolve payouts instantly (x2 / x5 / x50), and keep a permanent draw history with CSV export.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "host",
+    "lottery",
+    "gil",
+    "tickets",
+    "minigame"
+  ]
+}
